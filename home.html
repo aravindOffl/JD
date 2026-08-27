@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rathinam Group of Institutions — Leadership & Organogram Portal</title>
+  <meta name="description" content="Central gateway to Rathinam Technical Campus (RTC) and Rathinam Group of Institutions (RGU) Interactive Organograms and Faculty Directories." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0b1324;
+      --card-bg: rgba(18, 28, 48, 0.75);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --rtc-accent: #01696f;
+      --rtc-glow: rgba(1, 105, 111, 0.4);
+      --rtc-badge: #14b8a6;
+      --rgu-accent: #3b82f6;
+      --rgu-glow: rgba(59, 130, 246, 0.35);
+      --rgu-badge: #60a5fa;
+      --gold: #f59e0b;
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Subtle background ambient mesh */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -20%;
+      left: 10%;
+      width: 80vw;
+      height: 80vh;
+      background: radial-gradient(circle at 30% 30%, rgba(1, 105, 111, 0.22) 0%, transparent 60%),
+                  radial-gradient(circle at 70% 60%, rgba(59, 130, 246, 0.18) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(50px);
+    }
+
+    /* Container */
+    .portal-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      justify-content: center;
+    }
+
+    /* Header */
+    .portal-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      max-width: 780px;
+    }
+
+    .brand-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .brand-tag span {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold);
+    }
+
+    .portal-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 3.5vw + 1rem, 3.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 30%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .portal-subtitle {
+      font-size: clamp(0.95rem, 1vw + 0.5rem, 1.12rem);
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Portal Grid */
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.2rem;
+      width: 100%;
+      max-width: 980px;
+    }
+
+    /* Portal Card */
+    .portal-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 2.5rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      text-decoration: none;
+      color: var(--text);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .portal-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      transition: height 0.3s ease;
+    }
+
+    /* RTC Specific */
+    .card-rtc::before {
+      background: linear-gradient(90deg, #01696f 0%, #14b8a6 100%);
+    }
+
+    .card-rtc:hover {
+      border-color: rgba(20, 184, 166, 0.5);
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 20px 40px -12px var(--rtc-glow);
+    }
+
+    .card-rtc:hover::before {
+      height: 6px;
+    }
+
+    /* RGU Specific */
+    .card-rgu::before {
+      background: linear-gradient(90deg, #2563eb 0%, #60a5fa 100%);
+    }
+
+    .card-rgu:hover {
+      border-color: rgba(96, 165, 250, 0.5);
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 20px 40px -12px var(--rgu-glow);
+    }
+
+    .card-rgu:hover::before {
+      height: 6px;
+    }
+
+    /* Card Elements */
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.8rem;
+    }
+
+    .acronym-pill {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .card-rtc .acronym-pill {
+      color: #2dd4bf;
+    }
+
+    .card-rgu .acronym-pill {
+      color: #93c5fd;
+    }
+
+    .inst-badge {
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .card-rtc .inst-badge {
+      background: rgba(20, 184, 166, 0.15);
+      color: #5eead4;
+      border: 1px solid rgba(20, 184, 166, 0.3);
+    }
+
+    .card-rgu .inst-badge {
+      background: rgba(96, 165, 250, 0.15);
+      color: #bfdbfe;
+      border: 1px solid rgba(96, 165, 250, 0.3);
+    }
+
+    .card-body h2 {
+      font-family: var(--font-heading);
+      font-size: 1.55rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+
+    .card-body p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.8rem;
+    }
+
+    /* Feature tags */
+    .feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .feature-item {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Action Buttons */
+    .action-btn {
+      width: 100%;
+      padding: 0.95rem 1.4rem;
+      border-radius: 14px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      transition: all 0.25s ease;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .card-rtc .action-btn {
+      background: linear-gradient(135deg, #01696f 0%, #0d9488 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(1, 105, 111, 0.4);
+    }
+
+    .card-rtc:hover .action-btn {
+      background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+      box-shadow: 0 6px 20px rgba(20, 184, 166, 0.5);
+    }
+
+    .card-rgu .action-btn {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    }
+
+    .card-rgu:hover .action-btn {
+      background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+    }
+
+    .btn-arrow {
+      font-size: 1.1rem;
+      transition: transform 0.25s ease;
+    }
+
+    .portal-card:hover .btn-arrow {
+      transform: translateX(5px);
+    }
+
+    /* Footer */
+    .portal-footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #64748b;
+      font-size: 0.82rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .portal-footer a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .portal-footer a:hover {
+      color: #ffffff;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .portal-wrapper {
+        padding: 2.5rem 1.2rem 1.5rem;
+      }
+      .portal-header {
+        margin-bottom: 2.2rem;
+      }
+      .portal-card {
+        padding: 2rem 1.6rem;
+      }
+      .acronym-pill {
+        font-size: 1.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="portal-wrapper">
+    <!-- Header -->
+    <header class="portal-header">
+      <div class="brand-tag">
+        <span></span> Rathinam Group of Institutions
+      </div>
+      <h1 class="portal-title">Institutional Leadership &amp; Organograms</h1>
+      <p class="portal-subtitle">Select an institutional portal below to access the interactive governance structure, leadership portfolios, and department faculty directories.</p>
+    </header>
+
+    <!-- 2 Main Cards -->
+    <div class="portal-grid">
+      
+      <!-- 1. RTC Portal Button Card -->
+      <a href="index.html" class="portal-card card-rtc" id="btnRtcPortal" aria-label="Open Rathinam Technical Campus Organogram">
+        <div>
+          <div class="card-top">
+            <div class="acronym-pill">RTC</div>
+            <span class="inst-badge">Autonomous Campus</span>
+          </div>
+          <div class="card-body">
+            <h2>Rathinam Technical Campus</h2>
+            <p>Interactive institution organogram, administrative governance branches, 8 academic schools, departments, and 310+ faculty profiles.</p>
+            <div class="feature-list">
+              <span class="feature-item">🏛️ Campus Organogram</span>
+              <span class="feature-item">👥 Faculty Directory</span>
+              <span class="feature-item">🎓 8 Academic Schools</span>
+              <span class="feature-item">🔍 Live Search</span>
+            </div>
+          </div>
+        </div>
+        <button class="action-btn" tabindex="-1">
+          <span>Open RTC Organogram</span>
+          <span class="btn-arrow">&rarr;</span>
+        </button>
+      </a>
+
+      <!-- 2. RGU Portal Button Card -->
+      <a href="RGU organogram.html" class="portal-card card-rgu" id="btnRguPortal" aria-label="Open Rathinam Group of Institutions University Leadership Organogram">
+        <div>
+          <div class="card-top">
+            <div class="acronym-pill">RGU</div>
+            <span class="inst-badge">University Leadership</span>
+          </div>
+          <div class="card-body">
+            <h2>Rathinam Group of Institutions</h2>
+            <p>University leadership hierarchy, Deans &amp; Joint Directors governance matrix, operational portfolios, and executive reporting lines.</p>
+            <div class="feature-list">
+              <span class="feature-item">🌐 University Leadership</span>
+              <span class="feature-item">🎖️ Deans &amp; JD Profiles</span>
+              <span class="feature-item">📋 Operational Portfolios</span>
+              <span class="feature-item">📊 Governance Matrix</span>
+            </div>
+          </div>
+        </div>
+        <button class="action-btn" tabindex="-1">
+          <span>Open RGU Organogram</span>
+          <span class="btn-arrow">&rarr;</span>
+        </button>
+      </a>
+
+    </div>
+  </main>
+
+  <footer class="portal-footer">
+    &copy; 2026-2027 Rathinam Group of Institutions. All rights reserved.
+  </footer>
+
+</body>
+</html>

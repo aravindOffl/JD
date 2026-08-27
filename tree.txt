@@ -1,0 +1,47 @@
+CHIEF BUSINESS OFFICER (CBO)
+│
+└── PRINCIPAL
+    │
+    ├── PLACEMENT
+    │
+    ├── ACADEMIC & ADMINISTRATIVE HEADS
+    │   │
+    │   ├── Admin Office
+    │   ├── Principal Office
+    │   ├── Experiential Learning
+    │   ├── ERP & International Relations 
+    │   ├── Digital Learning and Professional Bodies
+    │   ├── IQAC
+    │   ├── Student Affairs
+    │   ├── Controller of Examination
+    │   │   ├── Controller of Examination
+    │   │   └── IQAC Accreditation
+    │   ├── ICT
+    │   ├── Training
+    │   ├── Physical Education
+    │   ├── Library
+    │   ├── Research
+    │   └── R-FabXStudio
+    │
+    └── SCHOOLS
+        │
+        ├── RAALE - Rathinam Advanced Active Learning Ecosystem
+        │   ├── RAALE (AVP Office)
+        │   ├── Center of Excellence
+        │   ├── Intellect Engineering & Science
+        │   └── Emerging and Specialized Learning
+        │
+        ├── School of Computing
+        │   ├── School of Computing (Dean Office)
+        │   ├── Computer Science and Engineering
+        │   ├── Artificial Intelligence & Data Science
+        │   ├── Information Technology
+        │   ├── CSE - Artificial Intelligence & Machine Learning
+        │   └── CSE - Cyber Security
+        │
+        ├── School of Mechanical Sciences
+        ├── School of Electrical Sciences
+        ├── Science and Humanities
+        ├── MBA
+        ├── Intellect MBA
+        └── MCA
