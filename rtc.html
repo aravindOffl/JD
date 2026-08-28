@@ -1142,11 +1142,14 @@
   <!-- 3. SCHOOL SUB-ORGANOGRAM MODAL (Dynamic Department Drill-Down) -->
   <div id="schoolOrgModal" class="modal-overlay" onclick="closeSchoolOrgModal(event)">
     <div class="modal-card" style="max-width: 980px;" onclick="event.stopPropagation()">
-      <div class="modal-top-bar" id="schoolModalTopBar" style="background: linear-gradient(135deg, #047857 0%, #065f46 100%);">
-        <div>
-          <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.85; font-weight: 700;">School Structural Breakdown</div>
-          <h2 id="schoolModalTitle" style="font-size: 1.25rem; font-weight: 700; color: #fff;">School Structure &amp; Departments</h2>
-          <p id="schoolModalSubtitle" style="font-size: 0.82rem; opacity: 0.9; margin-top: 2px;">Tap any department below to view faculty members</p>
+      <div class="modal-top-bar" id="schoolModalTopBar" style="background: linear-gradient(135deg, #047857 0%, #065f46 100%); display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; min-width: 0; flex: 1;">
+          <img id="schoolModalLeaderAvatar" src="" alt="Leader Photo" style="width: 54px; height: 54px; border-radius: 50%; object-fit: cover; border: 2.5px solid #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.25); background: #fef9c3; flex-shrink: 0; display: none;" />
+          <div style="min-width: 0; flex: 1;">
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.85; font-weight: 700;">School Structural Breakdown</div>
+            <h2 id="schoolModalTitle" style="font-size: 1.25rem; font-weight: 700; color: #fff; line-height: 1.25;">School Structure &amp; Departments</h2>
+            <p id="schoolModalSubtitle" style="font-size: 0.84rem; opacity: 0.95; margin-top: 3px; font-weight: 500;">Tap any department below to view faculty members</p>
+          </div>
         </div>
         <button class="modal-close-btn" onclick="closeSchoolOrgModal()">&times;</button>
       </div>
@@ -1919,11 +1922,12 @@
         subtitle: 'Leadership: Dr.Arunkumar R (Associate Vice President)',
         color: '#b45309',
         lead: 'Dr.Arunkumar R (Associate Vice President)',
+        lead_photo: '',
         departments: [
-          { name: 'RAALE (AVP Office)', unit_id: 'unit_raale', head: 'Dr.Arunkumar R (AVP)' },
-          { name: 'Center of Excellence', unit_id: 'unit_coe', head: 'Ananthi (Dean)' },
-          { name: 'Intellect Engineering & Science', unit_id: 'unit_intellect_science', head: 'Manju S (Dean)' },
-          { name: 'Emerging and Specialized Learning', unit_id: 'unit_emerging_learning', head: 'Abitha P (Head)' }
+          { name: 'RAALE (AVP Office)', unit_id: 'unit_raale', head: 'Dr.Arunkumar R (AVP)', lead_photo: '' },
+          { name: 'Center of Excellence', unit_id: 'unit_coe', head: 'Ananthi (Dean)', lead_photo: 'Profile/All Faculty Details/Question/ANANTHI_Ananthi P.jpg' },
+          { name: 'Intellect Engineering & Science', unit_id: 'unit_intellect_science', head: 'Manju S (Dean)', lead_photo: 'Profile/All Faculty Details/Question/Manju_Photo - Copy_Manju S.jpg' },
+          { name: 'Emerging and Specialized Learning', unit_id: 'unit_emerging_learning', head: 'Abitha P (Head)', lead_photo: 'Profile/All Faculty Details/Question/ABITHA PASSPORT PHOTO_Abitha P.jpeg' }
         ]
       },
       'computing': {
@@ -1931,13 +1935,14 @@
         subtitle: 'Leadership: Dr.S.V.Sudha (Dean)',
         color: '#0284c7',
         lead: 'Dr.S.V.Sudha (Dean)',
+        lead_photo: 'Profile/All Faculty Details/Question/sudha_Dr. Sudha S V.jpg',
         departments: [
-          { name: 'School of Computing (Dean Office)', unit_id: 'unit_soc_dean', head: 'Dr.S.V.Sudha (Dean)' },
-          { name: 'Computer Science and Engineering', unit_id: 'unit_soc_cse', head: 'Jeevakarunya C (HoD i/c)' },
-          { name: 'Artificial Intelligence & Data Science', unit_id: 'unit_soc_aids', head: 'Dr. M. Dhurgadevi (HoD)' },
-          { name: 'Information Technology', unit_id: 'unit_soc_it', head: 'R Karthika (HoD i/c)' },
-          { name: 'CSE - Artificial Intelligence & Machine Learning', unit_id: 'unit_soc_aiml', head: 'Dr. Poongodi K (HoD)' },
-          { name: 'CSE - Cyber Security', unit_id: 'unit_soc_cyber', head: 'Dr. M. Amutha (HoD)' }
+          { name: 'School of Computing (Dean Office)', unit_id: 'unit_soc_dean', head: 'Dr.S.V.Sudha (Dean)', lead_photo: 'Profile/All Faculty Details/Question/sudha_Dr. Sudha S V.jpg' },
+          { name: 'Computer Science and Engineering', unit_id: 'unit_soc_cse', head: 'Jeevakarunya C (HoD i/c)', lead_photo: 'Profile/All Faculty Details/Question/IMG_0332_Jeevakarunya C.jpeg' },
+          { name: 'Artificial Intelligence & Data Science', unit_id: 'unit_soc_aids', head: 'Dr. M. Dhurgadevi (HoD)', lead_photo: 'Profile/All Faculty Details/Question/DD Photo_Dr. Dhurgadevi M.jpg' },
+          { name: 'Information Technology', unit_id: 'unit_soc_it', head: 'R Karthika (HoD i/c)', lead_photo: 'Profile/All Faculty Details/Question/1764166893249_Karthika R.jpg' },
+          { name: 'CSE - Artificial Intelligence & Machine Learning', unit_id: 'unit_soc_aiml', head: 'Dr. Poongodi K (HoD)', lead_photo: 'Profile/All Faculty Details/Question/Photo_Dr. Poongodi K.jpeg' },
+          { name: 'CSE - Cyber Security', unit_id: 'unit_soc_cyber', head: 'Dr. M. Amutha (HoD)', lead_photo: 'Profile/All Faculty Details/Question/Photo_Dr Amutha M.jpg' }
         ]
       },
       'mechanical': {
@@ -1945,11 +1950,12 @@
         subtitle: 'Leadership: Dr. S. Seenivasan (Dean)',
         color: '#047857',
         lead: 'Dr. S. Seenivasan (Dean)',
+        lead_photo: 'Profile/All Faculty Details/Question/seeni png_SEENIVASAN S.png',
         departments: [
-          { name: 'Mechanical Engineering', unit_id: 'unit_mech_mechanical_engineering', head: 'G. Vijayasekaran (HoD i/c)' },
-          { name: 'Mechatronics Engineering', unit_id: 'unit_mech_mechatronics', head: 'Sivaprakash Paramasivam (HoD i/c)' },
-          { name: 'Agricultural Engineering', unit_id: 'unit_mech_agricultural', head: 'Dr. Dinesh Kumar S (HoD i/c)' },
-          { name: 'Biotechnology', unit_id: 'unit_mech_biotechnology', head: 'HoD / Program Lead' }
+          { name: 'Mechanical Engineering', unit_id: 'unit_mech_mechanical_engineering', head: 'G. Vijayasekaran (HoD i/c)', lead_photo: 'Profile/All Faculty Details/Question/Vijayasekaran_G_Photo_Vijayasekaran G.jpg' },
+          { name: 'Mechatronics Engineering', unit_id: 'unit_mech_mechatronics', head: 'Sivaprakash Paramasivam (HoD i/c)', lead_photo: 'Profile/All Faculty Details/Question/PHOTO_Sivaprakash Paramasi.jpg' },
+          { name: 'Agricultural Engineering', unit_id: 'unit_mech_agricultural', head: 'Dr. Dinesh Kumar S (HoD i/c)', lead_photo: 'Profile/All Faculty Details/Question/KDS_0649 copy_HOD IC  - Agricultur.jpg' },
+          { name: 'Biotechnology', unit_id: 'unit_mech_biotechnology', head: 'HoD / Program Lead', lead_photo: '' }
         ]
       },
       'electrical': {
@@ -1957,8 +1963,9 @@
         subtitle: 'Leadership: Dr L Chitra (Associate Dean)',
         color: '#7c3aed',
         lead: 'Dr L Chitra (Associate Dean)',
+        lead_photo: 'Profile/All Faculty Details/Question/12.Dr.L. Chitra_Chitra L.jpg',
         departments: [
-          { name: 'Electronics and Communication (ECE)', unit_id: 'unit_ses_ece', head: 'Karthick L.S (HoD i/c)' }
+          { name: 'Electronics and Communication (ECE)', unit_id: 'unit_ses_ece', head: 'Karthick L.S (HoD i/c)', lead_photo: 'Profile/All Faculty Details/Question/karthik1_Karthick L.S.jpg' }
         ]
       },
       'snh': {
@@ -1966,8 +1973,9 @@
         subtitle: 'Leadership: PADMA HARINI S (Associate Dean)',
         color: '#059669',
         lead: 'PADMA HARINI S (Associate Dean)',
+        lead_photo: 'Profile/All Faculty Details/Question/Harini Photo_Padma Harini S.jpeg',
         departments: [
-          { name: 'Science and Humanities', unit_id: 'unit_snh', head: 'PADMA HARINI S (Associate Dean)' }
+          { name: 'Science and Humanities', unit_id: 'unit_snh', head: 'PADMA HARINI S (Associate Dean)', lead_photo: 'Profile/All Faculty Details/Question/Harini Photo_Padma Harini S.jpeg' }
         ]
       },
       'mba': {
@@ -1975,8 +1983,9 @@
         subtitle: 'Leadership: Dr. P. M. Shiyana (HoD i/c)',
         color: '#d97706',
         lead: 'Dr. P. M. Shiyana (HoD i/c)',
+        lead_photo: 'Profile/All Faculty Details/Question/IMG-20251029-WA0003_Dr. P. M Shiyana - H.jpg',
         departments: [
-          { name: 'Master of Business Administration (MBA)', unit_id: 'unit_mba', head: 'Dr. P. M. Shiyana (HoD i/c)' }
+          { name: 'Master of Business Administration (MBA)', unit_id: 'unit_mba', head: 'Dr. P. M. Shiyana (HoD i/c)', lead_photo: 'Profile/All Faculty Details/Question/IMG-20251029-WA0003_Dr. P. M Shiyana - H.jpg' }
         ]
       },
       'intellect_mba': {
@@ -1984,8 +1993,9 @@
         subtitle: 'Leadership: Intellect MBA Leadership',
         color: '#ea580c',
         lead: 'Intellect MBA Leadership',
+        lead_photo: '',
         departments: [
-          { name: 'Intellect MBA', unit_id: 'unit_intellect_mba', head: 'Program Lead' }
+          { name: 'Intellect MBA', unit_id: 'unit_intellect_mba', head: 'Program Lead', lead_photo: '' }
         ]
       },
       'mca': {
@@ -1993,8 +2003,9 @@
         subtitle: 'Leadership: Dr K Anuradha (Director)',
         color: '#4338ca',
         lead: 'Dr K Anuradha (Director)',
+        lead_photo: 'Profile/All Faculty Details/Question/anu photo_Dr.K.Anuratha.jpeg',
         departments: [
-          { name: 'Master of Computer Applications (MCA)', unit_id: 'unit_mca', head: 'Dr K Anuradha (Director)' }
+          { name: 'Master of Computer Applications (MCA)', unit_id: 'unit_mca', head: 'Dr K Anuradha (Director)', lead_photo: 'Profile/All Faculty Details/Question/anu photo_Dr.K.Anuratha.jpeg' }
         ]
       },
       'all': {
@@ -2023,6 +2034,26 @@
       
       const topBar = document.getElementById('schoolModalTopBar');
       topBar.style.background = `linear-gradient(135deg, ${config.color} 0%, #1e293b 100%)`;
+
+      // Render School Leader Photo in Top Bar
+      const leaderAvatar = document.getElementById('schoolModalLeaderAvatar');
+      if (leaderAvatar) {
+        if (config.lead_photo) {
+          leaderAvatar.style.display = 'block';
+          leaderAvatar.src = encodeURI(config.lead_photo);
+          leaderAvatar.alt = config.lead || config.title;
+          leaderAvatar.onerror = function() {
+            this.onerror = null;
+            this.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(config.lead || config.title)}&background=b28a1a&color=fff`;
+          };
+        } else if (config.lead && !config.isAll) {
+          leaderAvatar.style.display = 'block';
+          leaderAvatar.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(config.lead)}&background=b28a1a&color=fff`;
+          leaderAvatar.alt = config.lead;
+        } else {
+          leaderAvatar.style.display = 'none';
+        }
+      }
 
       const svgContainer = document.getElementById('schoolSvgContainer');
       const deptGrid = document.getElementById('schoolDeptGrid');
@@ -2159,18 +2190,22 @@
       svgHTML += `</svg>`;
       svgContainer.innerHTML = svgHTML;
 
-      // Render Jump Grid
+      // Render Jump Grid with Department Head Photos
       let gridHTML = '';
       depts.forEach(dept => {
-        const count = FACULTY_DATA.filter(f => f._hierarchy && f._hierarchy.unit_id === dept.unit_id).length;
         const headSubtitle = dept.head ? `Head: ${escapeHtml(dept.head)}` : '';
+        const deptHeadPhoto = dept.lead_photo ? encodeURI(dept.lead_photo) : (dept.head ? `https://ui-avatars.com/api/?name=${encodeURIComponent(dept.head)}&background=b28a1a&color=fff` : '');
+
         gridHTML += `
-          <div class="dept-quick-card" onclick="selectDeptFromSchoolOrg('${dept.unit_id}')" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 0.75rem 1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;">
-            <div>
-              <div style="font-weight: 700; font-size: 0.88rem; color: var(--text);">${escapeHtml(dept.name)}</div>
-              ${headSubtitle ? `<div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 2px;">${headSubtitle}</div>` : ''}
+          <div class="dept-quick-card" onclick="selectDeptFromSchoolOrg('${dept.unit_id}')" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 10px; padding: 0.75rem 1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; transition: all 0.2s;">
+            <div style="display: flex; align-items: center; gap: 0.75rem; min-width: 0; flex: 1;">
+              ${deptHeadPhoto ? `<img src="${escapeHtml(deptHeadPhoto)}" alt="${escapeHtml(dept.head || dept.name)}" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover; border: 2px solid #b28a1a; background: #fef9c3; flex-shrink: 0;" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(dept.head || dept.name)}&background=b28a1a&color=fff';" />` : ''}
+              <div style="min-width: 0; flex: 1;">
+                <div style="font-weight: 700; font-size: 0.88rem; color: var(--text); line-height: 1.3;">${escapeHtml(dept.name)}</div>
+                ${headSubtitle ? `<div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 2px; line-height: 1.35;">${headSubtitle}</div>` : ''}
+              </div>
             </div>
-            <span class="dept-badge" style="background: ${config.color}15; color: ${config.color}; font-weight: 700;">View &rarr;</span>
+            <span class="dept-badge" style="background: ${config.color}15; color: ${config.color}; font-weight: 700; flex-shrink: 0;">View &rarr;</span>
           </div>
         `;
       });
@@ -2182,15 +2217,18 @@
       config.schoolsList.forEach(sch => {
         const schConf = SCHOOL_CONFIGS[sch.key];
         const deptsCount = (schConf.departments || []).length;
-        const facultyCount = FACULTY_DATA.filter(f => f._hierarchy && f._hierarchy.school === (schConf.departments[0] ? schConf.departments[0].school : '')).length || (schConf.departments || []).reduce((acc, d) => acc + FACULTY_DATA.filter(f => f._hierarchy && f._hierarchy.unit_id === d.unit_id).length, 0);
+        const schLeaderPhoto = schConf.lead_photo ? encodeURI(schConf.lead_photo) : `https://ui-avatars.com/api/?name=${encodeURIComponent(schConf.lead || schConf.title)}&background=b28a1a&color=fff`;
 
         gridHTML += `
-          <div class="dept-quick-card" onclick="openSchoolOrganogram('${sch.key}')" style="background: #ffffff; border: 1.5px solid ${schConf.color}40; border-radius: 10px; padding: 0.9rem 1.1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s;">
-            <div>
-              <div style="font-weight: 700; font-size: 0.92rem; color: ${schConf.color};">${escapeHtml(schConf.title)}</div>
-              <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 2px;">${deptsCount} Department${deptsCount > 1 ? 's' : ''} &bull; ${escapeHtml(schConf.lead || '')}</div>
+          <div class="dept-quick-card" onclick="openSchoolOrganogram('${sch.key}')" style="background: #ffffff; border: 1.5px solid ${schConf.color}40; border-radius: 12px; padding: 0.9rem 1.1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; transition: all 0.2s;">
+            <div style="display: flex; align-items: center; gap: 0.85rem; min-width: 0; flex: 1;">
+              <img src="${escapeHtml(schLeaderPhoto)}" alt="${escapeHtml(schConf.lead || schConf.title)}" style="width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid #b28a1a; background: #fef9c3; flex-shrink: 0;" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=${encodeURIComponent(schConf.lead || schConf.title)}&background=b28a1a&color=fff';" />
+              <div style="min-width: 0; flex: 1;">
+                <div style="font-weight: 700; font-size: 0.92rem; color: ${schConf.color};">${escapeHtml(schConf.title)}</div>
+                <div style="font-size: 0.76rem; color: var(--text-muted); margin-top: 2px;">${deptsCount} Department${deptsCount > 1 ? 's' : ''} &bull; ${escapeHtml(schConf.lead || '')}</div>
+              </div>
             </div>
-            <div style="text-align: right;">
+            <div style="text-align: right; flex-shrink: 0;">
               <span class="dept-badge" style="background: ${schConf.color}15; color: ${schConf.color}; font-weight: 700;">Explore &rarr;</span>
             </div>
           </div>
